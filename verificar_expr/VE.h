@@ -23,6 +23,7 @@ struct _ADDR_VARS_ {
 struct _EXPR_ {
   te_expr *expr;
   double *vars_addr;
+  int n; // Quantidade de variáveis
 };
 
 struct _VE_RETURN_ {

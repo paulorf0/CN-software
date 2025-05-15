@@ -6,14 +6,8 @@ struct _vector_ {
   float y;
 };
 
-// x'' = f(t, x, x')
-// y = x'
-// y' = f(t, x, y)
-
-// Y = (x,y) = (x,x')
-
 struct _solEDO_ {
-  struct _vector_ y; // y = y'
+  struct _vector_ y; // y = x'
   struct _vector_ x;
 };
 

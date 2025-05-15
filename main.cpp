@@ -7,7 +7,7 @@ int main() {
   std::ofstream create_file("logs.txt");
   create_file.close();
 
-  std::string f = "x*y + 2)";
+  std::string f = "x*y + 2";
   struct _VE_RETURN_ expr = make_exp(f);
   if (expr.error) {
     std::string report = report_error(expr.exception.exception);

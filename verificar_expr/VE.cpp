@@ -133,6 +133,7 @@ struct _EXPR_ compile_exp(const char *f, struct _ADDR_VARS_ vars) {
   struct _EXPR_ expr;
   expr.expr = exp;
   expr.vars_addr = vars.vars_addr;
+  expr.n = vars.size;
   create_report("compile_exp", "VE.cpp", "Expressão compilada.", SUCESS);
   return expr;
 }
