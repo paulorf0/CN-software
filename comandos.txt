@@ -1,0 +1,8 @@
+gcc -c tinyexpr/tinyexpr.c
+g++ -c verificar_expr/VE.cpp
+g++ -c exception/error_handling.cpp
+g++ -c logs/log.cpp
+if ($?) { g++ main.cpp log.o tinyexpr.o error_handling.o VE.o -o MAIN }
+if ($?) {./MAIN.exe}
+Remove-Item -Force *.o, .\tinyexpr\tinyexpr.o, .\verificar_expr\VE.o, .\excepton\error_handling.o, MAIN.exe -ErrorAction SilentlyContinue 
+
