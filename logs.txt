@@ -1,0 +1,4 @@
+[2025-05-15 14:40:35] Função: make_exp | Arquivo: VE.cpp | Ação: Inicializando função. | Erro: SUCESS
+[2025-05-15 14:40:35] Função: make_exp | Arquivo: VE.cpp | Ação: Executando check_expr. | Erro: SUCESS
+[2025-05-15 14:40:35] Função: check_expr | Arquivo: VE.cpp | Ação: Inicializando função. Expressão: x*y + 2) | Erro: SUCESS
+[2025-05-15 14:40:35] Função: check_expr | Arquivo: VE.cpp | Ação: Em algum ponto da função matemática digitada, o delimitador não está corretamente posto. | Erro: WRONG_SYNTAX

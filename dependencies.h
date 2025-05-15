@@ -8,6 +8,7 @@
 #include "exception\error_handling.h"
 #include "verificar_expr\VE.h"
 #include <iostream>
+#include <locale.h>
 #include <stack>
 #include <stdlib.h>
 
