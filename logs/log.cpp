@@ -24,7 +24,7 @@ void report_log_file(struct _LOG_FORMAT_ log, const std::filesystem::path &path,
           << "Função: " << log.function << " | "
           << "Arquivo: " << log.arquivo << " | "
           << "Ação: " << log.acao << " | "
-          << "Erro: " << ErrorCode_toString(log.error) << "\n";
+          << "Erro: " << ErrorCodeVE_toString(log.error) << "\n";
 
   if (outfile.fail()) {
     std::cerr << "ERRO CRÍTICO: Falha ao escrever no arquivo de log: "
@@ -43,14 +43,14 @@ void report_log(struct _LOG_FORMAT_ log) {
             << "Função: " << log.function << " | "
             << "Arquivo: " << log.arquivo << " | "
             << "Ação: " << log.acao << " | "
-            << "Erro: " << ErrorCode_toString(log.error) << std::endl;
+            << "Erro: " << ErrorCodeVE_toString(log.error) << std::endl;
 
   static const std::filesystem::path LOG_FILE = LOG_DIR / "logs.txt";
   report_log_file(log, LOG_FILE, true);
 }
 
 void create_report(std::string function, std::string arquivo, std::string acao,
-                   ErrorCode error) {
+                   ErrorCodeVE error) {
   struct _LOG_FORMAT_ log = {function, arquivo, acao, error, get_time()};
 
   report_log(log);

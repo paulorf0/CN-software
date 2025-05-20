@@ -16,7 +16,7 @@ int main() {
   }
 
   expr.exp.vars_addr[0] = 2;
-  expr.exp.vars_addr[1] = 2;
+  expr.exp.vars_addr[1] = 3;
   const double h = te_eval(expr.exp.expr);
   std::cout << "Avaliação: " << h;
 

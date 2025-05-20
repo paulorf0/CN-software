@@ -1,25 +1,19 @@
+#include "..\enum\err.h"
+#include "..\enum\functions.h"
+#include "..\exception\CN_error.h"
+#include "..\structs.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-struct _vector_ {
-  float x;
-  float y;
-};
+// Em todos os métodos a precisão relativa vai ser utilizada como critério de
+// parada.
 
-struct _solEDO_ {
-  struct _vector_ y; // y = x'
-  struct _vector_ x;
-};
-
-struct _solMATRIZ_ {
-  double *sol; // Lista de soluções
-  int n;       // Quantidade de soluções
-};
+bool master(Vector x, double e, int routine); // Função que faz o gerenciamento.
 
 // Zeros de funções
-double bissec(char *f, double e); // Função e precisão
-double NR(char *f, double e);     // Newton-Rhapson (NR)
-double MS(char *f, double e);     // Metodo da Secante (MS)
+double bissec(Vector x, double e); // Função e precisão
+double NR(Vector x, double e);     // Newton-Rhapson (NR)
+double MS(Vector x, double e);     // Metodo da Secante (MS)
 
 // Sistemas Lineares
 struct _solMATRIZ_ MEG(double *matriz, int row,
@@ -32,10 +26,11 @@ struct _solMATRIZ_ MGS(double *matriz, int row,
                        int col); // Método Gauss-Seidel (MGS)
 
 // EDOs
-struct _solEDO_ euler(struct _vector_ x0, char *f);  // Euler comum
-struct _solEDO_ eulerM(struct _vector_ x0, char *f); // Euler melhorado
-struct _solEDO_ RK3(struct _vector_ x0, char *f);    // Runge-Kutta(RK)
-struct _solEDO_ RK4(struct _vector_ x0, char *f);
-struct _solEDO_ taylor2(struct _vector_ x0, char *f); // fx + fyf
+struct _solEDO_ euler(struct _vector_ x0, struct _EXPR_ exp); // Euler comum
+struct _solEDO_ eulerM(struct _vector_ x0,
+                       struct _EXPR_ exp);                  // Euler melhorado
+struct _solEDO_ RK3(struct _vector_ x0, struct _EXPR_ exp); // Runge-Kutta(RK)
+struct _solEDO_ RK4(struct _vector_ x0, struct _EXPR_ exp);
+struct _solEDO_ taylor2(struct _vector_ x0, struct _EXPR_ exp); // fx + fyf
 
 // Posteriormente métodos de interpolação.

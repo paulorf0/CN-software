@@ -1,0 +1,10 @@
+Tudo que tem a sigla CN é relacionado a pasta "metodos_numericos" (CN = Calculo Numérico).
+
+print_terminal é uma tentativa de modularizar os prints dado em terminal, para que padronize. Toda a comunicação
+feita por terminal será intermediado por esse arquivo. Dessa maneira, fica mais fácil fazer alterações no modelo
+de print.
+
+Vão ter dois tipos de print no terminal: um print em real time, em que é necessário uma entrada de usuário e os 
+prints "carregados". Os prints carregador vão ser um grande print em diversas informações do que aconteceu na 
+execução do programa. Ou seja, o programa vai executar um método e o print só vai ser exibido no final do método,
+caso não ocorra nenhum erro. Se erros ocorrerem, o tratamento de erro vai ser acionado.
