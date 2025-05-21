@@ -1,7 +1,11 @@
 Talvez seja interessante que os métodos numéricos não recebam a struct _EXPR_, mas que a expressão fique salva 
 em algum local que todos os métodos possam ter acesso para utilizar. Dessa maneira, evitar ter que ficar 
 passando como argumento. A melhor forma de fazer isso é transformando em uma classe?
+    |
+    |_ Solução atual foi colocar dentro do header structs.h
 
 Em print_terminal, talvez seja interessante retornar um erro e fechar o programa (Ou tratar o erro em outro módulo), 
 em vez de obrigar o usuário a digitar uma entrada correta. 
 
+Alterar em report_log para não receber um codigo do tipo ErrorCodeVe, mas algo padrão. Talvez seja interessante
+um enum de erros geral. (OK.)

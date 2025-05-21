@@ -12,17 +12,12 @@ typedef enum {
   EXPR_COMPILATION_ERROR,
   MALLOC_ERROR,
   UNKNOW_ERROR,
-  END
-} ErrorCodeVE;
-
-typedef enum { INVALID_INTERVAL, INVALID_FUNCTION, END } ErrorCodeCN;
-
-typedef enum {
+  INVALID_INTERVAL,
+  INVALID_FUNCTION,
   NEW_INTERVAL,
   GET_INPUT,
-
   ERROR,
-  END
-} RoutineCN;
+  END_ERR
+} ErrorCode;
 
 #endif

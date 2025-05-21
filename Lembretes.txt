@@ -8,3 +8,5 @@ Vão ter dois tipos de print no terminal: um print em real time, em que é neces
 prints "carregados". Os prints carregador vão ser um grande print em diversas informações do que aconteceu na 
 execução do programa. Ou seja, o programa vai executar um método e o print só vai ser exibido no final do método,
 caso não ocorra nenhum erro. Se erros ocorrerem, o tratamento de erro vai ser acionado.
+
+Alterar o local das funções concat_msg_inf e concat_obs_inf? Atualmente estão em print_terminal.h

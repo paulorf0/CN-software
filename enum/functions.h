@@ -1,1 +1,4 @@
-typedef enum { BISSEC, END } function;
+typedef enum {
+  BISSEC,
+  END_FUNC // Demarcador do final de enum.
+} function;

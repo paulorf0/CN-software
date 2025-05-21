@@ -2,17 +2,14 @@
 #ifndef PRINT_TERMINAL_H
 #define PRINT_TERMINAL_H
 
+#include "..\enum\err.h"
 #include "..\enum\response.h"
 #include "..\exception\error_handling.h"
+#include "..\logs\log.h"
+#include "..\structs.h"
 #include <iostream>
 #include <limits> // para std::numeric_limits
 #include <string>
-
-typedef struct {
-  std::string msg;
-  std::string obs;
-} info;
-
 #include <variant>
 
 typedef struct {
@@ -20,20 +17,41 @@ typedef struct {
   std::variant<std::string, int, double> data;
 } ResponseData;
 
+// Talvez essas funções deveriam ficar em outro local?
+void concat_msg_inf(std::string s) { sit_global.msg += s + '\n'; }
+void concat_obs_inf(std::string s) { sit_global.obs += s + '\n'; }
+
+// Toda a informação vai ser acumulada em msg.
 void print_terminal() {
+  // Fazendo Log
+  std::string info;
+  info.append(sit_global.msg);
+  info.append(sit_global.obs);
+  create_report("print_real_time", "print_terminal.h", info, SUCESS);
+
   std::cout << "---------- Informação ----------" << std::endl;
 
-  //   std::cout <<
+  std::cout << sit_global.msg << std::endl;
 
-  std::cout << "---------- Informação ----------" << std::endl;
+  if (!sit_global.obs.empty())
+    std::cout << "############ Observações ############" << std::endl
+              << sit_global.obs;
+
+  std::cout << "---------- FIM ----------" << std::endl;
 }
 
+// A captura da informação será feita por outra função.
 void print_real_time(Response response) {
+  // Fazendo Log
+  std::string info;
+  info.append(sit_global.msg);
+  info.append(sit_global.obs);
+  create_report("print_real_time", "print_terminal.h", info, SUCESS);
+
   std::cout << "---------- Situação Atual ----------" << std::endl;
   std::cout << "Ação de usuário necessário. Informação do código retornado: "
             << std::endl;
-  std::cout << ErrorCodeResponse_toString(response);
-  ResponseData data = treat_code(response);
+  // std::cout << ErrorCodeResponse_toString(response);
   std::cout << "---------- Situação Atual ----------" << std::endl;
 }
 

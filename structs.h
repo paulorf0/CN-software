@@ -50,6 +50,12 @@ typedef struct {
   double *vars_addr;
   int n;
 } EXPR;
-
 extern EXPR expr_global;
+
+typedef struct {
+  std::string msg;
+  std::string obs;
+} INFO;
+extern INFO sit_global;
+
 #endif

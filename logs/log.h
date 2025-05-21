@@ -19,13 +19,13 @@ struct _LOG_FORMAT_ {
   std::string function;
   std::string arquivo;
   std::string acao;
-  ErrorCodeVE error;
+  ErrorCode error;
   std::string time;
 };
 
 std::string get_time();
 void create_report(std::string function, std::string arquivo, std::string acao,
-                   ErrorCodeVE error);
+                   ErrorCode error);
 void report_log(struct _LOG_FORMAT_ log);
 void report_log_file(struct _LOG_FORMAT_ log, const std::filesystem::path &path,
                      bool append);

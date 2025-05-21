@@ -3,5 +3,5 @@ typedef enum {
   WAIT_USER_INPUT_INT,
   WAIT_USER_INPUT_DOUBLE,
 
-  END
+  END_RES // Demarcador do final do enum
 } Response;
